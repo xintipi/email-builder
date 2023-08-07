@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import '../base/reset';
+  @import '../base/global';
+}
+
+@layer components {
+  @import '../components/container';
+  @import '../components/icon';
+  @import '../components/sider';
+  @import '../components/select';
+  @import '../components/card';
+  @import '../components/input';
+  @import '../components/button';
+  @import '../components/form-item';
+}

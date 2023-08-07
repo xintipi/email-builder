@@ -1,0 +1,6 @@
+.customize-ant-card {
+  @apply border rounded-[10px] border-solid border-purple-light;
+  .ant-card-body {
+    @apply py-[19px] px-[25px] #{!important};
+  }
+}

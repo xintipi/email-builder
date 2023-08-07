@@ -1,0 +1,20 @@
+.customize-ant-form-item {
+  &.ant-form-item {
+    @apply mb-0;
+  }
+
+  .ant-form-item-row {
+    @apply flex flex-col items-start;
+
+    .ant-form-item-label {
+      @apply font-semibold mb-[5px];
+    }
+
+    .ant-form-item-control {
+      @apply w-full mb-[58px];
+      .ant-form-item-explain-error {
+        @apply text-[14px];
+      }
+    }
+  }
+}

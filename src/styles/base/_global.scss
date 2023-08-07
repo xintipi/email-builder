@@ -1,0 +1,15 @@
+.active-link {
+  @apply relative w-[50px] h-[50px] bg-circle-home bg-no-repeat;
+}
+
+.absolute-center {
+  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.email-builder-content {
+  @apply h-full w-full rounded-[5px] border border-dashed border-gray-light py-[17px] px-[20px];
+}

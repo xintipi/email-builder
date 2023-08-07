@@ -1,0 +1,24 @@
+{
+  "sl_connectors": "Select a Connector",
+  "available_tools": {
+    "text": "Available Tools",
+    "options": {
+      "customize_template": "Customize Template",
+      "html_to_email_kit": "HTML to Email Kit",
+      "update_utm_value": "Update UTM Value",
+      "saved_templates": "Saved Templates"
+    }
+  },
+  "admin_tools": {
+    "text": "Admin Tools",
+    "options": {
+      "logo_library": "Logo Library",
+      "banner_library": "Banner Library",
+      "icon_library": "Icon Library",
+      "template_library": "Template Library",
+      "login_logs": "Login Logs",
+      "template_logs": "Template Logs",
+      "localization_settings": "Localization Settings"
+    }
+  }
+}

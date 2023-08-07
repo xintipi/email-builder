@@ -1,0 +1,9 @@
+.next
+public
+styles
+README.md
+package.json
+package-lock.json
+.gitignore
+tsconfig.json
+.eslintrc.json

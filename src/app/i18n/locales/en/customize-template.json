@@ -1,0 +1,9 @@
+{
+  "event_id": "Event Id",
+  "skip": "Skip",
+  "continue": "Continue",
+
+  "validation": {
+    "event_id_not_number": "Event Id must be a number"
+  }
+}
