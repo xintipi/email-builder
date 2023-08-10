@@ -1,9 +1,37 @@
-import { Col } from 'antd'
+import ColComponent from '../../col.component'
 
-export default async function Page({ params: { lng } }) {
+import { useTranslation } from '@/app/i18n'
+import TemplateContent from '@/components/partials/template-content'
+import TemplateHeader from '@/components/partials/template-header'
+import samples from '@/mock/sample-templates.json'
+
+async function getTemplates() {
+  // eslint-disable-next-line no-undef
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+  return samples
+}
+
+export default async function EventIdPage({ params: { lng } }) {
+  const { t } = await useTranslation(lng, ['skip'])
+  const result = await getTemplates()
   return (
-    <Col flex={4} className="relative">
-      <div className="email-builder-content">event id</div>
-    </Col>
+    <ColComponent>
+      <div className="email-builder-content">
+        <TemplateHeader
+          translation={{
+            select_template: t('select_template'),
+            go_back: t('go_back'),
+          }}
+        />
+
+        <TemplateContent
+          templates={result}
+          hasCreate={false}
+          translation={{
+            start_editing: t('start_editing'),
+          }}
+        />
+      </div>
+    </ColComponent>
   )
 }

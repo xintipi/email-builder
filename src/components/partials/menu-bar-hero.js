@@ -11,7 +11,7 @@ export default function MenuBarHero({ options, lng, segment, active }) {
 
   return (
     <Card bordered={false} className="customize-ant-card">
-      <ul className="flex list-none flex-col gap-[19px]">
+      <ul className="flex list-none flex-col gap-[19px] text-[14px]">
         {options.map((option) => (
           <li
             key={option.id}

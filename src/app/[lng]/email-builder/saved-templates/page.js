@@ -1,9 +1,9 @@
-import { Col } from 'antd'
+import ColComponent from '../col.component'
 
-export default async function Page({ params: { lng } }) {
+export default async function SavedTemplatesPage({ params: { lng } }) {
   return (
-    <Col flex={4} className="relative">
+    <ColComponent>
       <div className="email-builder-content">Saved templates</div>
-    </Col>
+    </ColComponent>
   )
 }

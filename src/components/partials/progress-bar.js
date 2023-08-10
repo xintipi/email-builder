@@ -1,7 +1,10 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import NProgress from 'nprogress'
-import { memo, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
+
+import { useRouteHistory } from '@/hooks/use-route-history'
 
 const ProgressBar = ({ height = '4px', color = '#0A2FFF' }) => {
   const styles = (
@@ -37,6 +40,8 @@ const ProgressBar = ({ height = '4px', color = '#0A2FFF' }) => {
   )
 
   const lastClickedRouteRef = useRef(null)
+  const { previousRoute } = useRouteHistory()
+  const pathName = usePathname()
 
   const changeLanguageInUrl = (url) => {
     const parts = url.split('/')
@@ -48,6 +53,19 @@ const ProgressBar = ({ height = '4px', color = '#0A2FFF' }) => {
 
     return url
   }
+
+  useEffect(() => {
+    if (
+      (previousRoute !== pathName &&
+        previousRoute.includes('/customize-template') &&
+        previousRoute.includes('/new')) ||
+      (previousRoute !== pathName &&
+        previousRoute.includes('/customize-template') &&
+        previousRoute.includes('/edit'))
+    ) {
+      window.location.reload(true)
+    }
+  }, [previousRoute, pathName])
 
   useEffect(() => {
     NProgress.configure({ showSpinner: false })
@@ -83,4 +101,4 @@ const ProgressBar = ({ height = '4px', color = '#0A2FFF' }) => {
   return styles
 }
 
-export default memo(ProgressBar)
+export default ProgressBar

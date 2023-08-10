@@ -1,0 +1,9 @@
+.customize-ant-modal {
+  @apply py-[15px] #{!important};
+  .ant-modal-content {
+    @apply h-full;
+    .ant-modal-body {
+      @apply h-full overflow-auto;
+    }
+  }
+}

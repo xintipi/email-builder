@@ -1,0 +1,9 @@
+.box-template {
+  @apply max-h-[500px] hover:shadow-[rgba(0,0,0,0.15)_0_5px_20px] min-h-[150px] overflow-hidden rounded transition-all duration-[0.2s] ease-[ease] delay-[0s] relative border-[0.4px] border-solid border-[rgb(225,230,242)];
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.08));
+}
+
+.hover-box-template {
+  @apply absolute p-5 inset-x-[4px] inset-y-0 bg-white opacity-90 rounded border-[0.4px] border-solid border-[rgb(225,230,242)];
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.08));
+}

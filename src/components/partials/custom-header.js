@@ -1,6 +1,5 @@
 import { SearchOutlined } from '@ant-design/icons'
 import PropTypes from 'prop-types'
-import { memo } from 'react'
 
 import Input from '@/components/shared/input'
 import Header from '@/layouts/header'
@@ -27,4 +26,4 @@ CustomHeader.propTypes = {
   children: PropTypes.node,
 }
 
-export default memo(CustomHeader)
+export default CustomHeader

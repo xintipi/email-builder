@@ -1,18 +1,37 @@
-import { Col } from 'antd'
-import { headers } from 'next/headers'
+import ColComponent from '../../col.component'
 
-import ModalEmailEditor from '@/components/partials/modal-email-editor'
+import { useTranslation } from '@/app/i18n'
+import TemplateContent from '@/components/partials/template-content'
+import TemplateHeader from '@/components/partials/template-header'
+import samples from '@/mock/sample-templates.json'
 
-export default async function Page({ params: { lng } }) {
-  const headersList = headers()
-  const domain = headersList.get('x-forwarded-host') || ''
-  const protocol = headersList.get('x-forwarded-proto') || ''
+async function getTemplates() {
+  // eslint-disable-next-line no-undef
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+  return samples
+}
+
+export default async function SkipPage({ params: { lng } }) {
+  const { t } = await useTranslation(lng, ['skip'])
+  const result = await getTemplates()
   return (
-    <Col flex={4} className="relative">
+    <ColComponent>
       <div className="email-builder-content">
-        <ModalEmailEditor protocol={protocol} domain={domain} />
-        Skip lists
+        <TemplateHeader
+          translation={{
+            select_template: t('select_template'),
+            go_back: t('go_back'),
+          }}
+        />
+
+        <TemplateContent
+          templates={result}
+          translation={{
+            new_template: t('new_template'),
+            start_editing: t('start_editing'),
+          }}
+        />
       </div>
-    </Col>
+    </ColComponent>
   )
 }

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { memo } from 'react'
 
 const Button = (props) => {
-  const { type, htmlType, onClick, children, disabled, loading, icon } = props
+  const { type, htmlType, onClick, children, disabled, loading, icon, className } = props
 
   return (
     <AntdButton
@@ -16,14 +16,16 @@ const Button = (props) => {
       disabled={disabled}
       loading={loading}
       icon={icon}
-      rootClassName={clsx('customize-ant-button', {
+      rootClassName={clsx('customize-ant-button', className, {
         'bg-purple-light hover:bg-purple-darker': type === 'purple',
         'bg-red-500 hover:bg-red-600': type === 'danger',
         'bg-cloud-burst hover:bg-cloud-burst-darker': type === 'cloud-burst',
+        'hover:text-black': type === 'default',
       })}>
       <span
         className={clsx({
-          'text-white': type === 'purple' || type === 'danger' || type === 'cloud-burst',
+          'text-white':
+            type === 'purple' || type === 'danger' || type === 'cloud-burst' || type === 'primary',
         })}>
         {children}
       </span>

@@ -28,6 +28,7 @@ module.exports = {
       backgroundImage: {
         'circle-user': "url('../../public/images/icons/bg-circle-user.svg')",
         'circle-home': "url('../../public/images/icons/bg-circle-gray.svg')",
+        'new-template': "url('../../public/images/new-template.svg')",
       },
       animation: {
         'fade-out': 'fadeOut 5ms ease-out forwards',

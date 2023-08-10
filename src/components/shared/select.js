@@ -3,7 +3,9 @@
 import { Select as AntdSelect } from 'antd'
 import { memo } from 'react'
 
-const Select = ({ items, ...props }) => {
+const Select = (props) => {
+  const { value, items } = props
+
   const renderOptions = () => {
     return items.map((option) => (
       <AntdSelect.Option key={option.value} value={option.value}>
@@ -12,8 +14,16 @@ const Select = ({ items, ...props }) => {
     ))
   }
 
+  const isValueInItems = (value) => {
+    return items.some((option) => option.value === value)
+  }
+
   return (
-    <AntdSelect {...props} bordered={false} className="customize-ant-select">
+    <AntdSelect
+      {...props}
+      value={isValueInItems(value) ? value : undefined}
+      bordered={false}
+      className="customize-ant-select">
       {items && renderOptions()}
     </AntdSelect>
   )

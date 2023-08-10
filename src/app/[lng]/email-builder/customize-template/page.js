@@ -1,13 +1,13 @@
-import { Col } from 'antd'
+import ColComponent from '../col.component'
 
 import EventForm from '@/components/ui/customize-template/form'
 
-export default async function Page({ params: { lng } }) {
+export default async function CustomizeTemplatePage({ params: { lng } }) {
   return (
-    <Col flex={4} className="relative">
+    <ColComponent>
       <div className="email-builder-content">
         <EventForm lng={lng} />
       </div>
-    </Col>
+    </ColComponent>
   )
 }

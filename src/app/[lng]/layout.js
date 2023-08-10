@@ -5,10 +5,10 @@ import { dir } from 'i18next'
 import { Inter } from 'next/font/google'
 
 import { languages } from '@/app/i18n/settings'
-import EmailEditor from '@/components/partials/email-editor'
 import ProgressBar from '@/components/partials/progress-bar'
 import MainLayout from '@/layouts/main-layout'
 import { AntConfigProvider } from '@/providers/ant-config.provider'
+import HistoryProvider from '@/providers/history.provider'
 import { NextAuthProvider } from '@/providers/next-auth.provider'
 import { StyleRegistryProvider } from '@/providers/style-registry.provider'
 
@@ -42,16 +42,20 @@ export async function generateStaticParams() {
 
 export default function RootLayout({ children, params: { lng } }) {
   return (
-    <html lang={lng} dir={dir(lng)}>
+    <html
+      lang={lng}
+      dir={dir(lng)}
+      data-copyright="Copyright © All Rights Reserved by Next Generation Platform Inc.">
       <body
         className={clsx(inter.className, 'overflow-x-auto xl:overflow-x-hidden')}
         suppressHydrationWarning>
-        <ProgressBar />
-
         <NextAuthProvider>
           <StyleRegistryProvider>
             <AntConfigProvider>
-              <MainLayout lng={lng}>{children}</MainLayout>
+              <HistoryProvider>
+                <ProgressBar />
+                <MainLayout lng={lng}>{children}</MainLayout>
+              </HistoryProvider>
             </AntConfigProvider>
           </StyleRegistryProvider>
         </NextAuthProvider>

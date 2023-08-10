@@ -11,5 +11,5 @@
 }
 
 .email-builder-content {
-  @apply h-full w-full rounded-[5px] border border-dashed border-gray-light py-[17px] px-[20px];
+  @apply h-[calc(100vh_-_127px)] 2xl:h-[calc(100vh_-_40px)] w-full rounded-[5px] border border-dashed border-gray-light py-[17px] px-[20px];
 }

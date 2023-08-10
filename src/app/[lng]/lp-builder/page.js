@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function Page() {
+export default function LpBuilderPage() {
   return (
     <div className="flex-center container h-full">
       <div className="flex flex-col items-center">

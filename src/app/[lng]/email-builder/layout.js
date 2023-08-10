@@ -17,9 +17,9 @@ export default async function Layout({ children, params: { lng } }) {
   // const protocol = headersList.get('x-forwarded-proto') || ''
   // const invokePath = headersList.get('x-invoke-path') || ''
   return (
-    <section className="h-full px-[23px] py-[22px]">
-      <Row className="h-full gap-[24px]">
-        <Col flex={1} className="email-builder-menu max-w-[230px]">
+    <section className="p-[20px]">
+      <Row className="h-full">
+        <Col xxl={4} xl={24} md={24} className="email-builder-menu pr-[20px]">
           <MenuBar lng={lng} />
         </Col>
         {children}

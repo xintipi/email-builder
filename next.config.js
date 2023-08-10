@@ -5,6 +5,14 @@ const nextAuthUrl = dev ? 'http://localhost:3000' : 'https://cms.ipes.edu.vn'
 const nextPublicApiUrl = dev ? 'http://localhost:3000/api' : 'https://cms.ipes.edu.vn/api'
 
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
   env: {
     NEXTAUTH_URL: nextAuthUrl,
     NEXTAUTH_SECRET: 'c74e4c2cd227e4e438e2ef57db064c56',

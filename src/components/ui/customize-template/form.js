@@ -12,7 +12,7 @@ import Input from '@/components/shared/input'
 import yup from '@/lib/yup/customize-rules'
 
 export default function EventForm({ lng }) {
-  const { t } = useTranslation(lng, 'customize-template')
+  const { t } = useTranslation(lng, ['customize-template'])
   const router = useRouter()
 
   const schema = yup.object().shape({
@@ -50,7 +50,7 @@ export default function EventForm({ lng }) {
 
       <div className="btn-actions flex w-full items-center justify-between">
         <Link href="/email-builder/customize-template/skip">
-          <Button>{t('skip')}</Button>
+          <Button type="default">{t('skip')}</Button>
         </Link>
 
         <Button type="cloud-burst" htmlType="submit">

@@ -1,4 +1,5 @@
-const defaultScriptUrl = 'https://editor.unlayer.com/embed.js?2'
+const defaultScriptUrl = '/builderjs/dist/builder.js'
+const defaultStyleUrl = '/builderjs/dist/builder.css'
 const callbacks = []
 let loaded = false
 
@@ -8,6 +9,19 @@ const isScriptInjected = (scriptUrl) => {
 
   scripts.forEach((script) => {
     if (script.src.includes(scriptUrl)) {
+      injected = true
+    }
+  })
+
+  return injected
+}
+
+const isStyleInjected = (styleUrl) => {
+  const styles = document.querySelectorAll('link')
+  let injected = false
+
+  styles.forEach((style) => {
+    if (style.href.includes(styleUrl)) {
       injected = true
     }
   })
@@ -53,4 +67,13 @@ const loadScript = (callback, scriptUrl = defaultScriptUrl) => {
   }
 }
 
-export { capitalizeFirstLetter, loadScript }
+const loadStyle = (styleUrl = defaultStyleUrl) => {
+  if (!isStyleInjected(styleUrl)) {
+    const embedStyle = document.createElement('link')
+    embedStyle.setAttribute('rel', 'stylesheet')
+    embedStyle.setAttribute('href', styleUrl)
+    document.head.appendChild(embedStyle)
+  }
+}
+
+export { capitalizeFirstLetter, loadScript, loadStyle }
